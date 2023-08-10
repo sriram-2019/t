@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        input{
+            font-style: italic;
+            /* font-weight: bold;  */
+        }
+    </style>
+</head>
+<body class="bg-primary">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-center text-success h2">Login</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="uid"><b>User-id:</b></label>
+                            <input type="text" placeholder="Enter user-id" onblur="chk1()" id="uid" class="form-control my-2">
+                            <small class="text-danger" id="a1"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd"><b>Password:</b></label>
+                            <input type="password" placeholder="Enter password" onblur="chk1()" id="pwd" class="form-control my-2">
+                            <small class="text-danger" id="a2"></small>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="./ctm.html" target="_blank" class="btn btn-success btn-lg btn-block" onclick="return check()">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+        function check(){
+            let user=document.getElementById('uid').value;
+            let pass=document.getElementById('pwd').value;
+            let alert1=document.getElementById('a1');
+            let alert2=document.getElementById('a2');
+            if(user=="" || user!='admin'){
+                alert1.innerHTML="Enter valid user-id"
+                return false;
+            } 
+            if(pass=="" || pass!='admin432'){
+                alert2.innerHTML='Enter valid password';
+                return false;
+            } 
+            else{
+                alert1.innerHTML="";
+                alert2.innerHTML="";
+            }        
+        }
+        
+    </script>
+</body>
+</html>
